@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>首页-数据可视化大屏</title>http://127.0.0.1:8000/index/
+    <link rel="stylesheet" href="../static/css/index.css"/>
+</head>
+
+<body>
+<header>
+    <h1>国内疫情数据综合可视化平台</h1>
+    <div class="showTime">当前时间：2020年3月17-0时54分14秒</div>
+    <script>
+        var t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+            clearTimeout(t); //清除定时器
+            dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours(); //获取时
+            var m = dt.getMinutes(); //获取分
+            var s = dt.getSeconds(); //获取秒
+            document.querySelector(".showTime").innerHTML =
+                "当前时间：" +
+                y +
+                "年" +
+                mt +
+                "月" +
+                day +
+                "-" +
+                h +
+                "时" +
+                m +
+                "分" +
+                s +
+                "秒";
+            t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+    </script>
+</header>
+<section class="mainbox">
+    <div class="column">
+        <div class="panel gauge">
+            <h2>国内新冠疫情死亡率</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+            <h2>全国每日新增的确诊人数（二月份）</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel scatter">
+            <h2>各省市从湖北迁入的人口比例与该省累计确诊人数的关系</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="panel map">
+            <h2>人口迁徙图</h2>
+            <div class="chart"></div>
+            <div class="map1"></div>
+            <div class="map2"></div>
+            <div class="map3"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel china-hot-map">
+            <h2>各个省市累计确诊人数</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="panel pie">
+            <h2>各媒体发布的新闻占比情况</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel themeRiver">
+            <h2>各媒体每一天的新闻数量</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel ciyun">
+            <h2>所有新闻的关键字</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+<script src="../static/js/flexible.js"></script>
+<script src="../static/js/jquery.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/echarts-wordcloud.js"></script>
+<script src="../static/js/index.js"></script>
+<script src="../static/js/china.js"></script>
+<script src="../static/js/myMap.js"></script>
+<script src="../static/js/chinaHotMap.js"></script>
+</body>
+</html>

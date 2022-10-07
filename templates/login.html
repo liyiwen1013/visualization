@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../static/css/login.css"/>
+    <link rel="stylesheet" href="../static/css/iconfont.css"/>
+</head>
+
+<body>
+<div id="bigBox">
+    <h2>国内疫情可视化大屏</h2>
+    <div class="inputBox">
+        <div class="inputText">
+            <form class="login_form" action="/login/" method="post">
+                {% csrf_token %}
+                <div class="inputText">
+                    <span class="iconfont icon-nickname"></span>
+                    <input type="text" autocomplete="off" placeholder="用户名" name="username" required/>
+                </div>
+                <div class="inputText">
+                    <span class="iconfont icon-visible"></span>
+                    <input class="pwd" type="password" autocomplete="off" placeholder="登录密码" name="password" required/>
+                </div>
+                <span id="msg">{{ msg }}</span>
+                <span style="color: #ff0000;"></span>
+                <button class="loginButton" type="submit" value="Login">登录</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

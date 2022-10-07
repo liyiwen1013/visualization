@@ -1,0 +1,6 @@
+#由于Django内部链接MySQL数据库的时候默认的是使用MySQLdb的
+#但是Python3中没有这个模块
+#所以我们要去修改project同名文件夹下的__init__.py文件
+import pymysql
+
+pymysql.install_as_MySQLdb()
